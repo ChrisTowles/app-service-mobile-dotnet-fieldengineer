@@ -5,7 +5,10 @@ In my testing the the fields, UpdatedAt, CreatedAt and Version are always null o
 
 Please post remarks on the Xamarin Forms [here](http://forums.xamarin.com/discussion/61815/data-sync-using-azure-mobile)
 
-![Image show the Null Values] (https://raw.githubusercontent.com/ChrisTowles/app-service-mobile-dotnet-fieldengineer/d12c747d4984be9bf4497b4d04271bc255d892bf/docmentation/Null%20Values%20when%20Patching%20an%20Object%20after%20its%20was%20updated..PNG)
+![Image show the Model Values] (https://raw.githubusercontent.com/ChrisTowles/app-service-mobile-dotnet-fieldengineer/d12c747d4984be9bf4497b4d04271bc255d892bf/docmentation/Null%20Values%20when%20Patching%20an%20Object%20after%20its%20was%20updated..PNG)
+
+
+![Image shows the Database Values] (https://raw.githubusercontent.com/ChrisTowles/app-service-mobile-dotnet-fieldengineer/ec7477f10bf273f7aabf4ac1556b76f80c5135f1/docmentation/List%20of%20Entries%20in%20DB%20with%20no%20Version%2C%20UpdatedAt%2C%20or%20CreatedAt.PNG)
 
 ---
 
