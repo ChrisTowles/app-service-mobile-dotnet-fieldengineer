@@ -4,6 +4,14 @@ platforms: dotnet, xamarin
 author: lindydonna
 ---
 
+#This fork is for Testing a Issue With UpdatedAt, CreatedAt and Version are always null.
+
+In my testing the the fields, UpdatedAt, CreatedAt and Version are always null on the models sent to the server and returned.
+
+Please post remarks on the Xamarin Forms [here](http://forums.xamarin.com/discussion/61815/data-sync-using-azure-mobile)
+
+
+---
 # Azure App Service field engineer sample with web admin portal and offline-sync-enabled Xamarin.Forms client
 
 **Try out a simple version of this demo and other Xamarin demos on ["Try App Service"](https://aka.ms/trymobile).**
