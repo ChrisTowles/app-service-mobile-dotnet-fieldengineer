@@ -1,8 +1,3 @@
----
-services: app-service\mobile, app-service\web
-platforms: dotnet, xamarin
-author: lindydonna
----
 
 #This fork is for Testing a Issue With UpdatedAt, CreatedAt and Version are always null.
 
@@ -10,8 +5,10 @@ In my testing the the fields, UpdatedAt, CreatedAt and Version are always null o
 
 Please post remarks on the Xamarin Forms [here](http://forums.xamarin.com/discussion/61815/data-sync-using-azure-mobile)
 
+![Image show the Null Values] (https://raw.githubusercontent.com/ChrisTowles/app-service-mobile-dotnet-fieldengineer/d12c747d4984be9bf4497b4d04271bc255d892bf/docmentation/Null%20Values%20when%20Patching%20an%20Object%20after%20its%20was%20updated..PNG)
 
 ---
+
 # Azure App Service field engineer sample with web admin portal and offline-sync-enabled Xamarin.Forms client
 
 **Try out a simple version of this demo and other Xamarin demos on ["Try App Service"](https://aka.ms/trymobile).**
