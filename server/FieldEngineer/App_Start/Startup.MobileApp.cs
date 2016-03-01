@@ -15,6 +15,7 @@ namespace FieldEngineer
     {
         public static void ConfigureMobileApp(IAppBuilder app)
         {
+			System.Threading.Thread.Sleep(10000);
             HttpConfiguration config = new HttpConfiguration();
 
             config.EnableSystemDiagnosticsTracing();

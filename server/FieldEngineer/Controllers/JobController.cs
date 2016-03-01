@@ -45,7 +45,8 @@ namespace FieldEngineerLiteService.Controllers
 
             //await client.UpdateCase( "0000" + job.JobNumber, job.Status, job.WorkPerformed);
 
-            return await UpdateAsync(id, patch);
+            var  update = await UpdateAsync(id, patch);
+			return update;
         }
 
         // POST tables/Job

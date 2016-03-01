@@ -9,7 +9,7 @@ namespace FieldEngineer
 {
     public partial class Startup
     {
-        public void Configuration(IAppBuilder app)
+        public static void Configuration(IAppBuilder app)
         {
             ConfigureMobileApp(app);
         }

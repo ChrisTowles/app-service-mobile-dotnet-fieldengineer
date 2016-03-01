@@ -22,7 +22,11 @@ namespace FieldEngineerLite
         {
             MainPage = new JobMasterDetailPage ();
         }
-    }
+
+
+
+		public static ILoginManager LoginManager;
+	}
 
     public static class AppStyle
     {

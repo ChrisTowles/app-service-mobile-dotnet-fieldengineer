@@ -52,10 +52,12 @@ namespace FieldEngineerLiteService.Models
 #if TRY_APP_SERVICE
     public class JobDbContextInitializer : DropCreateDatabaseAlways<JobDbContext>
 #else
-    public class JobDbContextInitializer : CreateDatabaseIfNotExists<JobDbContext>
+	public class JobDbContextInitializer : CreateDatabaseIfNotExists<JobDbContext>
+	//public class JobDbContextInitializer : DropCreateDatabaseAlways<JobDbContext>
+
 #endif
-    {
-        protected override void Seed(JobDbContext context)
+	{
+		protected override void Seed(JobDbContext context)
         {
             List<Job> jobs = new List<Job>
             {

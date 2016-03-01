@@ -13,6 +13,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Customer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Equipment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Job.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IAuthenticatorService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ILoginManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\JobCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\JobDetailsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\JobGroupingHeaderCell.cs" />

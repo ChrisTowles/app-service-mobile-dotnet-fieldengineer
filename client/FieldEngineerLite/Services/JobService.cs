@@ -19,11 +19,12 @@ namespace FieldEngineerLite
         public IMobileServiceClient MobileService = null;
         private IMobileServiceSyncTable<Job> jobTable;
 
-        // Placeholder string for Try App Service is ZUMOAPPURL
-        // To use with your own app, use URL in the form https://your-site-name.azurewebsites.net/
-        private const string MobileUrl = "ZUMOAPPURL";
+		// Placeholder string for Try App Service is ZUMOAPPURL
+		// To use with your own app, use URL in the form https://your-site-name.azurewebsites.net/
 
-        public async Task InitializeAsync()
+		private string MobileUrl = "http://ctowles-ecrumbs.roadid.com/";
+
+		public async Task InitializeAsync()
         {
             this.MobileService = 
                 new MobileServiceClient(MobileUrl, new LoggingHandler());
@@ -50,7 +51,17 @@ namespace FieldEngineerLite
             await MobileService.EventManager.PublishAsync(new MobileServiceEvent("JobChanged"));
         }
 
-        public async Task SyncAsync()
+		public async Task AddJobAsync(Job job)
+		{
+			job.Status = Job.PendingStatus;
+
+			await jobTable.InsertAsync(job);
+
+			// trigger an event so that the job list is refreshed
+			await MobileService.EventManager.PublishAsync(new MobileServiceEvent("JobChanged"));
+		}
+
+		public async Task SyncAsync()
         {
             try
             {
@@ -71,25 +82,27 @@ namespace FieldEngineerLite
                 await this.SyncAsync();
         }
 
+/*
+		public async Task EnsureLogin()
+		{
+			LoginInProgress = true;
+			while (this.MobileService..AppService.CurrentUser == null)
+			{
+				//await this.AppService.LoginAsync(
+				
+				try
+				{
+					await MobileService.LoginAsync(						MobileServiceAuthenticationProvider.Google.ToString());
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine("failed to authenticate: " + ex.Message);
+				}
 
-        //public async Task EnsureLogin()
-        //{
-        //    LoginInProgress = true;
-        //    while (this.AppService.CurrentUser == null) {
-        //        //await this.AppService.LoginAsync(
-        //        try 
-        //        {
-        //            await this.AppService.LoginAsync (App.UIContext, 
-        //                MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory.ToString());
-        //        }
-        //        catch(Exception ex)
-        //        {
-        //            Console.WriteLine("failed to authenticate: " + ex.Message);
-        //        }
+			}
 
-        //    }
-
-        //    LoginInProgress = false;
-        //}
-    }
+			LoginInProgress = false;
+		}
+		*/
+	}
 }
