@@ -34,7 +34,7 @@ namespace FieldEngineerLiteService.Controllers
         public async Task<Job> PatchJob(string id, Delta<Job> patch)
         {
 
-            Job job = patch.GetEntity();  // get new value
+            var job = patch.GetEntity();  // get new value
             //var user = this.User as MobileAppUser;
             //var creds = await user.GetIdentityAsync<AzureActiveDirectoryCredentials>();
             //var token = this.Request.Headers.GetValues("x-zumo-auth").First();
@@ -45,14 +45,14 @@ namespace FieldEngineerLiteService.Controllers
 
             //await client.UpdateCase( "0000" + job.JobNumber, job.Status, job.WorkPerformed);
 
-            var  update = await UpdateAsync(id, patch);
+            var update = await UpdateAsync(id, patch);
 			return update;
         }
 
         // POST tables/Job
         public async Task<IHttpActionResult> PostJob(Job item)
         {
-            Job current = await InsertAsync(item);
+            var current = await InsertAsync(item);
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 

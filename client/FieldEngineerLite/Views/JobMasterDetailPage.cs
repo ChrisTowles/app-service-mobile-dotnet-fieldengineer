@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using FieldEngineerLite.Models;
 using FieldEngineerLite.Views;
+using Android.OS;
+using System;
 
 namespace FieldEngineerLite
 {
@@ -46,7 +48,18 @@ namespace FieldEngineerLite
 			await jobService.SyncAsync();
 
 			var jobs = await jobService.ReadJobs("");
-            if (jobs.Count() > 0)
+
+			if (jobs.Any(x => x.Version != null || x.UpdatedAt != null || x.CreatedAt != null))
+			{
+				Console.WriteLine($"Version, UpdatedAt, CreatedAt are not all null");
+			}
+			else
+			{
+				Console.WriteLine($"Version, UpdatedAt, CreatedAt  all null");
+			}
+
+
+			if (jobs.Count() > 0)
             {
                 Job job = jobs.First();
                 NavigateTo(job);

@@ -50,7 +50,17 @@ namespace FieldEngineerLite.Models
             }
         }
 
-        [Version]
+		[CreatedAt]
+		public DateTimeOffset? CreatedAt { get; set; }
+
+		[UpdatedAt]
+		public DateTimeOffset? UpdatedAt { get; set; }
+
+		[Deleted]
+		public bool Deleted { get; set; }
+
+
+		[Version]
         public string Version { get; set; }
 
         [JsonIgnore]
