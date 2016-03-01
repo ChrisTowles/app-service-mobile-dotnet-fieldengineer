@@ -86,6 +86,7 @@ namespace FieldEngineerLite.Views
 					var job = new Job()
 					{
 						Id = Guid.NewGuid().ToString("N"),
+						CustomerName = "New Job" + DateTime.Now.ToShortDateString()
 					};
 					await jobService.AddJobAsync(job);
 					await this.RefreshAsync();
@@ -189,8 +190,9 @@ namespace FieldEngineerLite.Views
 		public async Task RefreshAsync()
 		{
 			//if (App.JobService.LoginInProgress == true) return;
-
-			var groups = from job in await jobService.ReadJobs("")
+			await Task.Delay(5000); //hack to get around a race condition
+			var listJobs = await jobService.ReadJobs("");
+			var groups = from job in listJobs
 						 group job by job.Status into jobGroup
 						 select jobGroup;
 

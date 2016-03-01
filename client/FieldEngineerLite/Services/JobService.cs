@@ -34,7 +34,8 @@ namespace FieldEngineerLite
 
             await MobileService.SyncContext.InitializeAsync(store, StoreTrackingOptions.NotifyLocalAndServerOperations);
             jobTable = MobileService.GetSyncTable<Job>();
-        }
+
+		}
 
         public async Task<IEnumerable<Job>> ReadJobs(string search)
         {
